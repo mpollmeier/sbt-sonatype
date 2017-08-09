@@ -175,14 +175,14 @@ releaseProcess := Seq[ReleaseStep](
   checkSnapshotDependencies,
   inquireVersions,
   runClean,
-  runTest,
+  ReleaseStep(action = Command.process("package", _)),
   setReleaseVersion,
   commitReleaseVersion,
   tagRelease,
-  releaseCommand("publishSigned"),
+  ReleaseStep(action = Command.process("publishSigned", _)),
   setNextVersion,
   commitNextVersion,
-  releaseCommand("sonatypeReleaseAll"),
+  ReleaseStep(action = Command.process("sonatypeReleaseAll", _)),
   pushChanges
 )
 
