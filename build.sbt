@@ -43,7 +43,7 @@ ThisBuild / dynverSeparator := "-"
 ThisBuild / scalaVersion := versions.scala
 
 lazy val buildSettings: Seq[Setting[_]] = Seq(
-  organization         := "org.xerial.sbt",
+  organization         := "com.michaelpollmeier",
   organizationName     := "Xerial project",
   organizationHomepage := Some(url("http://xerial.org/")),
   description := "A sbt plugin for publishing Scala/Java projects to the Maven Central through Sonatype Nexus REST API",
